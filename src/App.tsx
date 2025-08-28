@@ -150,7 +150,7 @@ function App() {
             </div>
             <div className="flex items-center space-x-2">
               <MapPin size={20} />
-              <span>University of Colombo</span>
+              <span>UCSC</span>
             </div>
           </div>
         </div>
