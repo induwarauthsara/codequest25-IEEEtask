@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Calendar, Trophy, Users, HelpCircle, Github, Linkedin, Mail, ExternalLink, MapPin } from 'lucide-react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 // Components
 import MatrixRain from '../components/MatrixRain';
-import CustomCursor from '../components/CustomCursor';
 import CyberGrid from '../components/CyberGrid';
 import TypingText from '../components/TypingText';
 import GlitchButton from '../components/GlitchButton';
@@ -22,7 +22,7 @@ export default function Home() {
 
   // Handle easter egg keyboard sequence
   useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
+    const handleKeyPress = (e) => {
       const newSequence = keySequence + e.key.toLowerCase();
       setKeySequence(newSequence);
       
@@ -135,7 +135,6 @@ export default function Home() {
       </Head>
       
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
-        <CustomCursor />
         <MatrixRain />
         <CyberGrid />
         
@@ -157,9 +156,11 @@ export default function Home() {
             </p>
             
             <div className="mb-12">
-              <GlitchButton className="pulse-animation">
-                REGISTER NOW
-              </GlitchButton>
+              <Link href="/registration">
+                <GlitchButton className="pulse-animation">
+                  REGISTER NOW
+                </GlitchButton>
+              </Link>
             </div>
             
             <div className="flex justify-center space-x-8 text-gray-400 font-mono">
@@ -363,7 +364,7 @@ export default function Home() {
             
             <div className="mt-8 text-center">
               <p className="text-gray-500 text-sm font-mono">
-                💡 <span className="text-red-400">Hint:</span> Try typing "help" on your keyboard...
+                💡 <span className="text-red-400">Hint:</span> Type the four-letter magic word that means “I need support”
               </p>
             </div>
           </div>

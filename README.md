@@ -4,6 +4,8 @@
 
 ![CodeQuest Banner](https://img.shields.io/badge/CodeQuest-Vault%20Edition-red?style=for-the-badge&logo=hackthebox&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black?style=for-the-badge&logo=next.js&logoColor=white)
+<!-- line break -->
+
 ![React](https://img.shields.io/badge/React-19.1.1-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
@@ -46,6 +48,59 @@ The platform embraces a **cybersecurity gaming atmosphere** with a red & black n
 - ⌨️ Typing text effects
 - 🎯 Easter egg modal (type "help")
 - 🌟 Smooth scrolling and reveal animations
+
+---
+
+## 🛠️ Quick Setup
+
+### Prerequisites
+- Node.js 18+ installed
+- Supabase account (free tier works great)
+- Git
+
+### Environment Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/induwarauthsara/codequest25-IEEEtask.git
+   cd codequest25-IEEEtask
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables:**
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Edit `.env.local` with your Supabase credentials:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key-here
+   ```
+
+4. **Set up Supabase database:**
+   - Follow the detailed guide in `SUPABASE_SETUP.md`
+   - Run the SQL schema from `supabase-schema.sql`
+
+5. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+6. **Open your browser:**
+   - Navigate to `http://localhost:3000`
+   - Start hacking! 🚀
+
+### Quick Database Setup
+Run this SQL in your Supabase SQL Editor:
+```sql
+-- Copy and paste the entire content from supabase-schema.sql
+-- This will create all necessary tables and security policies
+```
 
 ---
 

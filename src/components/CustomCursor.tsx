@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
-const CustomCursor: React.FC = () => {
+const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
+  const [trail, setTrail] = useState([{ x: 0, y: 0, id: 0 }].slice(1)); // Initialize with correct type but empty
 
   useEffect(() => {
     let trailId = 0;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       const newPosition = { x: e.clientX, y: e.clientY };
       setPosition(newPosition);
 
-      setTrail(prev => {
-        const newTrail = [
-          ...prev,
-          { ...newPosition, id: trailId++ }
-        ].slice(-10);
-        return newTrail;
+      setTrail(prevTrail => {
+        const newPoint = { x: newPosition.x, y: newPosition.y, id: trailId++ };
+        return [...prevTrail, newPoint].slice(-10);
       });
     };
 
@@ -31,7 +28,7 @@ const CustomCursor: React.FC = () => {
     <>
       {trail.map((point, index) => (
         <div
-          key={point.id}
+          key={`trail-${point.id}-${index}`}
           className="fixed pointer-events-none z-50 w-1 h-1 bg-red-500 rounded-full transition-opacity duration-200"
           style={{
             left: point.x - 2,
