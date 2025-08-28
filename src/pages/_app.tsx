@@ -9,7 +9,10 @@ export default function App({ Component, pageProps }) {
         <title>CodeQuest - Vault Edition | IEEE UCSC CTF Hackathon</title>
         <meta name="description" content="The ultimate cybersecurity challenge awaits. Join IEEE UCSC's premier CTF hackathon." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="keywords" content="CTF, cybersecurity, hackathon, IEEE, UCSC, CodeQuest" />
+        <meta property="og:title" content="CodeQuest - Vault Edition | IEEE UCSC CTF Hackathon" />
+        <meta property="og:description" content="The ultimate cybersecurity challenge awaits. Join IEEE UCSC's premier CTF hackathon." />
+        <meta property="og:type" content="website" />
       </Head>
       <CustomCursor />
       <Component {...pageProps} />
