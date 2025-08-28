@@ -206,6 +206,9 @@ const RegistrationSuccess = ({ team }) => {
         <div className="mt-8 text-gray-400 text-sm">
           <p>Need help? Contact us at <span className="text-red-400">ieee@ucsc.cmb.ac.lk</span></p>
           <p className="mt-2">© 2025 IEEE Student Branch UCSC</p>
+          <p className="mt-1 text-xs">
+            Developed by <a href="https://induwara.dev" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 transition-colors">Induwara Uthsara</a>
+          </p>
         </div>
       </div>
     </div>

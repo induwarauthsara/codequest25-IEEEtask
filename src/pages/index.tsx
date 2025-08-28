@@ -357,6 +357,9 @@ export default function Home() {
               <p className="text-gray-400 font-mono text-sm">
                 © 2025 IEEE Student Branch UCSC | All Rights Reserved
               </p>
+              <p className="text-gray-400 font-mono text-xs mt-1">
+                Developed by <a href="https://induwara.dev" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 transition-colors">Induwara Uthsara</a> 
+              </p>
               <p className="text-red-500 font-mono text-xs mt-2">
                 &gt; SYSTEM STATUS: OPERATIONAL | SECURITY LEVEL: MAXIMUM
               </p>
