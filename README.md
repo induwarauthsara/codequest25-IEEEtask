@@ -1,4 +1,4 @@
-# 🚀 CodeQuest – Vault Edition
+# 🚀 CodeQuest – Vault re-Edition
 
 <div align="center">
 
