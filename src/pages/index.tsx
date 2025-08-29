@@ -68,7 +68,7 @@ export default function Home() {
       role: "Event Co Chair",
       image: "/assets/likitha.5571cd8e.jpg",
       github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/likitha-chathubhashini-b852b0289/",
       email: "likithachathu@gmail.com",
       phone: "076 698 8362"
     },
@@ -77,7 +77,7 @@ export default function Home() {
       role: "Event Co Chair", 
       image: "/assets/noji.8520b926.jpg",
       github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/nojiyudara/",
       email: "noji.yu123@gmail.com",
       phone: "070 351 7563"
     },
@@ -95,7 +95,7 @@ export default function Home() {
       role: "Program Team Lead",
       image: "/assets/dineth.4687f7f1.jpg",
       github: "https://github.com",
-      linkedin: "https://linkedin.com",
+        linkedin: "https://www.linkedin.com/in/dineth-palliyaguru/",
       email: "dineththeekshana@gmail.com",
       phone: "077 410 4170"
     },
@@ -103,10 +103,10 @@ export default function Home() {
       name: "Induwara Uthsara",
       role: "Web Dev",
       image: "/assets/induwara.jpg",
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      github: "https://github.com/induwarauthsara",
+      linkedin: "https://www.linkedin.com/in/induwarauthsara/",
       email: "induwarauthsara@gmail.com",
-      phone: "0786607354"
+      phone: "078 660 7354"
     }
   ];
 
