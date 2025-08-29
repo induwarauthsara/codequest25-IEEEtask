@@ -313,17 +313,20 @@ export default function Home() {
               <p className="text-gray-400 font-mono">MEET THE ARCHITECTS</p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8 justify-items-center">
+            {/* Team Cards Container - Responsive and Centered */}
+            <div className="flex flex-wrap justify-center items-start gap-6 lg:gap-8 max-w-7xl mx-auto">
               {teamMembers.map((member, index) => (
-                <TeamCard
-                  key={index}
-                  name={member.name}
-                  role={member.role}
-                  image={member.image}
-                  github={member.github}
-                  linkedin={member.linkedin}
-                  email={member.email}
-                />
+                <div key={index} className="flex justify-center mb-4">
+                  <TeamCard
+                    name={member.name}
+                    role={member.role}
+                    image={member.image}
+                    github={member.github}
+                    linkedin={member.linkedin}
+                    email={member.email}
+                    phone={member.phone}
+                  />
+                </div>
               ))}
             </div>
           </div>

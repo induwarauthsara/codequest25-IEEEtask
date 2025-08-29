@@ -16,7 +16,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, github, linkedin
   const [imageError, setImageError] = useState(false);
   
   return (
-    <div className="flip-card w-80 h-96">
+    <div className="flip-card w-72 sm:w-80 h-96 mx-auto">
       <div className="flip-card-inner relative w-full h-full">
         {/* Front Side */}
         <div className="flip-card-front absolute inset-0 bg-gray-900 border-2 border-red-500/50 rounded-xl p-6 flex flex-col items-center justify-center">

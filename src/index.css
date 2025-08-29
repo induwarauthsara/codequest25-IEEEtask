@@ -188,6 +188,8 @@ body {
 
 .flip-card {
     perspective: 1000px;
+    margin: 0 auto; /* Ensure each card is centered in its container */
+    display: block; /* Ensure proper block layout */
 }
 
 .flip-card-inner {
