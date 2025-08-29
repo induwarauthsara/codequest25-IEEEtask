@@ -9,7 +9,6 @@ import { teamImages } from '../lib/images';
 // Components
 import MatrixRain from '../components/MatrixRain';
 import ParticleField from '../components/ParticleField';
-import ParticleField from '../components/ParticleField';
 import CyberGrid from '../components/CyberGrid';
 import Navbar from '../components/Navbar';
 import TypingText from '../components/TypingText';
@@ -24,7 +23,6 @@ import EasterEggModal from '../components/EasterEggModal';
 import HackerTerminal from '../components/HackerTerminal';
 import CyberStats from '../components/CyberStats';
 import QuickAccess from '../components/QuickAccess';
-import SecurityBadge from '../components/SecurityBadge';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -177,7 +175,6 @@ export default function Home() {
         <MatrixRain />
         <ParticleField />
         <CyberGrid />
-        <SecurityBadge />
         
         {/* Hero Section */}
         <section ref={heroRef} id="hero" className="relative min-h-screen flex items-center justify-center px-4 pt-20">
