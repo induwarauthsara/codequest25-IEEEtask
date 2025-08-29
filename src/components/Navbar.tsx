@@ -21,7 +21,7 @@ const Navbar = () => {
     { name: 'Timeline', href: '#timeline', icon: Calendar },
     { name: 'Vault', href: '#prizes', icon: Trophy },
     { name: 'Partners', href: '#partners', icon: Users },
-    { name: 'Command', href: '#team', icon: Shield },
+    { name: 'Squad', href: '#team', icon: Shield },
     { name: 'FAQ', href: '#faq', icon: HelpCircle },
   ];
 

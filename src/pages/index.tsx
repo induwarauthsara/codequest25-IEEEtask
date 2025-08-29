@@ -398,7 +398,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
-                <GlitchText text="COMMAND CENTER" />
+                <GlitchText text="ELITE SQUAD" />
               </h2>
               <p className="text-gray-400 font-mono">MEET THE ARCHITECTS</p>
             </div>
