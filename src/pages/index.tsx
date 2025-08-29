@@ -64,28 +64,49 @@ export default function Home() {
 
   const teamMembers = [
     {
-      name: "Alex Chen",
-      role: "Event Director",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Likitha Chathubhashini",
+      role: "Event Co Chair",
+      image: "/assets/likitha.5571cd8e.jpg",
       github: "https://github.com",
       linkedin: "https://linkedin.com",
-      email: "alex@ieee-ucsc.org"
+      email: "likithachathu@gmail.com",
+      phone: "076 698 8362"
     },
     {
-      name: "Sarah Kumar",
-      role: "Technical Lead",
-      image: "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Noji Yudara",
+      role: "Event Co Chair", 
+      image: "/assets/noji.8520b926.jpg",
       github: "https://github.com",
       linkedin: "https://linkedin.com",
-      email: "sarah@ieee-ucsc.org"
+      email: "noji.yu123@gmail.com",
+      phone: "070 351 7563"
     },
     {
-      name: "Michael Rodriguez",
-      role: "Security Architect",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Chamudi Upeka",
+      role: "Event Co Chair",
+      image: "/assets/chamudi.42c865f3.jpg",
       github: "https://github.com",
       linkedin: "https://linkedin.com",
-      email: "michael@ieee-ucsc.org"
+      email: "chamudiupeka21@gmail.com",
+      phone: "076 710 5536"
+    },
+    {
+      name: "Dineth Palliyaguru",
+      role: "Program Team Lead",
+      image: "/assets/dineth.4687f7f1.jpg",
+      github: "https://github.com",
+      linkedin: "https://linkedin.com",
+      email: "dineththeekshana@gmail.com",
+      phone: "077 410 4170"
+    },
+    {
+      name: "Induwara Uthsara",
+      role: "Web Dev",
+      image: "/assets/induwara.jpg",
+      github: "https://github.com",
+      linkedin: "https://linkedin.com",
+      email: "induwarauthsara@gmail.com",
+      phone: "0786607354"
     }
   ];
 

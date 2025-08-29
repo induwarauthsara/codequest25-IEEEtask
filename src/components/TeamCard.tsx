@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 interface TeamCardProps {
   name: string;
@@ -8,9 +8,10 @@ interface TeamCardProps {
   github?: string;
   linkedin?: string;
   email?: string;
+  phone?: string;
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, github, linkedin, email }) => {
+const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, github, linkedin, email, phone }) => {
   return (
     <div className="flip-card w-80 h-96">
       <div className="flip-card-inner relative w-full h-full">
@@ -50,6 +51,12 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, github, linkedin
               <a href={`mailto:${email}`} className="flex items-center space-x-3 text-white hover:text-red-500 transition-colors">
                 <Mail size={24} />
                 <span className="font-mono">Email</span>
+              </a>
+            )}
+            {phone && (
+              <a href={`tel:${phone}`} className="flex items-center space-x-3 text-white hover:text-red-500 transition-colors">
+                <Phone size={24} />
+                <span className="font-mono">{phone}</span>
               </a>
             )}
           </div>
