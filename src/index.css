@@ -1,186 +1,246 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Source+Code+Pro:wght@400;600;700&display=swap');
-
 :root {
-  --cyber-red: #ff1a1a;
-  --cyber-red-glow: rgba(255, 26, 26, 0.8);
-  --cyber-dark: #0a0a0a;
-  --cyber-gray: #1a1a1a;
+    --cyber-red: #ff1a1a;
+    --cyber-red-glow: rgba(255, 26, 26, 0.8);
+    --cyber-dark: #0a0a0a;
+    --cyber-gray: #1a1a1a;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: 'Source Code Pro', monospace;
-  background: var(--cyber-dark);
-  color: #ffffff;
-  overflow-x: hidden;
-  cursor: none;
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+    background: var(--cyber-dark);
+    color: #ffffff;
+    overflow-x: hidden;
+    cursor: none;
 }
 
+
 /* Scrollbar Styling */
+
 ::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--cyber-dark);
+    background: var(--cyber-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--cyber-red);
-  border-radius: 4px;
+    background: var(--cyber-red);
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff3333;
+    background: #ff3333;
 }
+
 
 /* Cyber Grid Animation */
+
 @keyframes gridMove {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-20px); }
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
 }
 
+
 /* Pulse animation for modal */
+
 @keyframes pulseOnce {
-  0% { 
-    transform: scale(0.95);
-    border-color: rgba(239, 68, 68, 0.3);
-  }
-  50% { 
-    transform: scale(1.02);
-    border-color: rgba(239, 68, 68, 1);
-  }
-  100% { 
-    transform: scale(1);
-    border-color: rgba(239, 68, 68, 0.7);
-  }
+    0% {
+        transform: scale(0.95);
+        border-color: rgba(239, 68, 68, 0.3);
+    }
+    50% {
+        transform: scale(1.02);
+        border-color: rgba(239, 68, 68, 1);
+    }
+    100% {
+        transform: scale(1);
+        border-color: rgba(239, 68, 68, 0.7);
+    }
 }
 
 .animate-pulse-once {
-  animation: pulseOnce 0.6s ease-out;
+    animation: pulseOnce 0.6s ease-out;
 }
 
 .cyber-grid {
-  animation: gridMove 4s ease-in-out infinite alternate;
+    animation: gridMove 4s ease-in-out infinite alternate;
 }
 
+
 /* Glitch Animation */
+
 @keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
 }
 
 .glitch:hover {
-  animation: glitch 0.3s ease-in-out infinite;
+    animation: glitch 0.3s ease-in-out infinite;
 }
+
 
 /* Neon Glow */
+
 .neon-glow {
-  text-shadow: 
-    0 0 5px var(--cyber-red),
-    0 0 10px var(--cyber-red),
-    0 0 15px var(--cyber-red),
-    0 0 20px var(--cyber-red);
+    text-shadow: 0 0 5px var(--cyber-red), 0 0 10px var(--cyber-red), 0 0 15px var(--cyber-red), 0 0 20px var(--cyber-red);
 }
 
+
 /* Readable Neon Glow for titles */
+
 .neon-glow-readable {
-  text-shadow: 
-    0 0 3px var(--cyber-red),
-    0 0 6px var(--cyber-red),
-    0 0 9px rgba(255, 26, 26, 0.6);
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  backdrop-filter: blur(2px);
+    text-shadow: 0 0 3px var(--cyber-red), 0 0 6px var(--cyber-red), 0 0 9px rgba(255, 26, 26, 0.6);
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    backdrop-filter: blur(2px);
 }
 
 .neon-border {
-  box-shadow: 
-    0 0 5px var(--cyber-red),
-    0 0 10px var(--cyber-red),
-    inset 0 0 5px rgba(255, 26, 26, 0.2);
-  border: 1px solid var(--cyber-red);
+    box-shadow: 0 0 5px var(--cyber-red), 0 0 10px var(--cyber-red), inset 0 0 5px rgba(255, 26, 26, 0.2);
+    border: 1px solid var(--cyber-red);
 }
 
+
 /* Pulse Animation */
+
 @keyframes pulse-red {
-  0% { box-shadow: 0 0 0 0 var(--cyber-red-glow); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 26, 26, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 26, 26, 0); }
+    0% {
+        box-shadow: 0 0 0 0 var(--cyber-red-glow);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 26, 26, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 26, 26, 0);
+    }
 }
 
 .pulse-animation {
-  animation: pulse-red 2s infinite;
+    animation: pulse-red 2s infinite;
 }
 
+
 /* Scan Line */
+
 @keyframes scan {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100vw); }
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
 }
 
 .scan-line {
-  animation: scan 3s ease-in-out infinite;
+    animation: scan 3s ease-in-out infinite;
 }
 
+
 /* Loading Bar Animation */
+
 @keyframes scan-bar {
-  0% { transform: scaleX(0); }
-  100% { transform: scaleX(1); }
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
 }
 
 .animate-scan-bar {
-  animation: scan-bar 3s ease-out forwards;
+    animation: scan-bar 3s ease-out forwards;
 }
 
+
 /* Flip Card */
+
 .flip-card {
-  perspective: 1000px;
+    perspective: 1000px;
 }
 
 .flip-card-inner {
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
-  backface-visibility: hidden;
+.flip-card-front,
+.flip-card-back {
+    backface-visibility: hidden;
 }
 
 .flip-card-back {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
+
 /* Utilities */
+
 .cyber-font {
-  font-family: 'Orbitron', monospace;
+    font-family: 'Orbitron', monospace;
 }
 
 .mono-font {
-  font-family: 'Source Code Pro', monospace;
+    font-family: 'Source Code Pro', monospace;
 }
 
+
 /* Responsive Design */
+
 @media (max-width: 768px) {
-  .flip-card {
-    width: 280px;
-  }
+    .flip-card {
+        width: 280px;
+    }
+}
+
+
+/* Navbar specific styles */
+
+.navbar-backdrop {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* Smooth scroll behavior */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    /* Account for fixed navbar */
 }

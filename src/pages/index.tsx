@@ -6,6 +6,7 @@ import Link from 'next/link';
 // Components
 import MatrixRain from '../components/MatrixRain';
 import CyberGrid from '../components/CyberGrid';
+import Navbar from '../components/Navbar';
 import TypingText from '../components/TypingText';
 import GlitchButton from '../components/GlitchButton';
 import TimelineItem from '../components/TimelineItem';
@@ -135,11 +136,12 @@ export default function Home() {
       </Head>
       
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
+        <Navbar />
         <MatrixRain />
         <CyberGrid />
         
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center px-4">
+        <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 pt-20">
           <div className="text-center z-10 max-w-4xl mx-auto">
             <div className="mb-8">
               <h1 className="text-6xl md:text-8xl font-bold mb-4 cyber-font neon-glow glitch">
@@ -204,7 +206,7 @@ export default function Home() {
         </section>
 
         {/* Timeline Section */}
-        <section className="relative py-20 px-4">
+        <section id="timeline" className="relative py-20 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
@@ -228,7 +230,7 @@ export default function Home() {
         </section>
 
         {/* Prizes Section */}
-        <section className="relative py-20 px-4">
+        <section id="prizes" className="relative py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
@@ -246,7 +248,7 @@ export default function Home() {
         </section>
 
         {/* Sponsors Section */}
-        <section className="relative py-20 px-4">
+        <section id="partners" className="relative py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
@@ -269,7 +271,7 @@ export default function Home() {
         </section>
 
         {/* Team Section */}
-        <section className="relative py-20 px-4">
+        <section id="team" className="relative py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
@@ -295,7 +297,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative py-20 px-4">
+        <section id="faq" className="relative py-20 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
