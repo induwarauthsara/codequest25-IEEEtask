@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Shield, Calendar, Trophy, Users, HelpCircle, Github, Linkedin, Mail, ExternalLink, MapPin } from 'lucide-react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -6,9 +8,12 @@ import { teamImages } from '../lib/images';
 
 // Components
 import MatrixRain from '../components/MatrixRain';
+import ParticleField from '../components/ParticleField';
+import ParticleField from '../components/ParticleField';
 import CyberGrid from '../components/CyberGrid';
 import Navbar from '../components/Navbar';
 import TypingText from '../components/TypingText';
+import GlitchText from '../components/GlitchText';
 import GlitchButton from '../components/GlitchButton';
 import TimelineItem from '../components/TimelineItem';
 import PrizeCard from '../components/PrizeCard';
@@ -16,11 +21,21 @@ import TeamCard from '../components/TeamCard';
 import FAQItem from '../components/FAQItem';
 import LoadingScreen from '../components/LoadingScreen';
 import EasterEggModal from '../components/EasterEggModal';
+import HackerTerminal from '../components/HackerTerminal';
+import CyberStats from '../components/CyberStats';
+import QuickAccess from '../components/QuickAccess';
+import SecurityBadge from '../components/SecurityBadge';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showEasterEgg, setShowEasterEgg] = useState(false);
   const [keySequence, setKeySequence] = useState('');
+  
+  // Intersection observers for animations
+  const [heroRef, heroInView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [introRef, introInView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [timelineRef, timelineInView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [prizesRef, prizesInView] = useInView({ threshold: 0.3, triggerOnce: true });
 
   // Handle easter egg keyboard sequence
   useEffect(() => {
@@ -160,34 +175,61 @@ export default function Home() {
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
         <Navbar />
         <MatrixRain />
+        <ParticleField />
         <CyberGrid />
+        <SecurityBadge />
         
         {/* Hero Section */}
-        <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 pt-20">
+        <section ref={heroRef} id="hero" className="relative min-h-screen flex items-center justify-center px-4 pt-20">
           <div className="text-center z-10 max-w-4xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-6xl md:text-8xl font-bold mb-4 cyber-font neon-glow glitch">
-                CODEQUEST
-              </h1>
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1 }}
+              className="mb-8"
+            >
+              <motion.h1 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={heroInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 1.2, delay: 0.3 }}
+                className="text-6xl md:text-8xl font-bold mb-4 cyber-font neon-glow"
+              >
+                <GlitchText text="CODEQUEST" glitchOnHover />
+              </motion.h1>
               <div className="text-2xl md:text-3xl text-red-500 font-mono mb-8">
                 <TypingText text="VAULT EDITION" speed={100} />
               </div>
-            </div>
+            </motion.div>
             
-            <p className="text-xl md:text-2xl mb-8 text-gray-300 font-mono">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={heroInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 1 }}
+              className="text-xl md:text-2xl mb-8 text-gray-300 font-mono"
+            >
               A Cybersecurity Capture the Flag Hackathon<br/>
               <span className="text-red-500">by IEEE Student Branch UCSC</span>
-            </p>
+            </motion.p>
             
-            <div className="mb-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 1.5 }}
+              className="mb-12"
+            >
               <Link href="/registration">
                 <GlitchButton className="pulse-animation">
                   REGISTER NOW
                 </GlitchButton>
               </Link>
-            </div>
+            </motion.div>
             
-            <div className="flex justify-center space-x-8 text-gray-400 font-mono">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={heroInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 2 }}
+              className="flex justify-center space-x-8 text-gray-400 font-mono"
+            >
               <div className="flex items-center space-x-2">
                 <Calendar size={20} />
                 <span>March 25, 2025</span>
@@ -196,23 +238,50 @@ export default function Home() {
                 <MapPin size={20} />
                 <span>UCSC</span>
               </div>
-            </div>
+            </motion.div>
           </div>
-          
-          {/* Scanning line effect */}
-          <div className="absolute top-0 left-0 w-1 h-full bg-red-500 opacity-30 scan-line"></div>
         </section>
 
         {/* Introduction Section */}
-        <section className="relative py-20 px-4">
+        <section ref={introRef} className="relative py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={introInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="mb-12"
+            >
               <div className="text-3xl md:text-4xl font-bold mb-8 font-mono text-red-500">
-                <TypingText text="> DECRYPT. EXPLOIT. MASTER." speed={80} />
+                {introInView && <TypingText text="> DECRYPT. EXPLOIT. MASTER." speed={80} />}
               </div>
-            </div>
+            </motion.div>
             
-            <div className="bg-gray-900 border-2 border-red-500/30 rounded-xl p-8 neon-border">
+            {/* Hacker Terminal */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              animate={introInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="mb-12"
+            >
+              <HackerTerminal />
+            </motion.div>
+            
+            {/* Cyber Stats */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={introInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="mb-12"
+            >
+              <CyberStats />
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={introInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1.5 }}
+              className="bg-gray-900/50 backdrop-blur-sm border-2 border-red-500/30 rounded-xl p-8 shadow-2xl shadow-red-500/10 mb-12"
+            >
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
                 Welcome to the most immersive cybersecurity challenge in Sri Lanka. CodeQuest – Vault Edition 
                 pushes the boundaries of ethical hacking, bringing together the brightest minds to compete in 
@@ -223,19 +292,33 @@ export default function Home() {
                 will test your skills across multiple domains including web exploitation, cryptography, reverse 
                 engineering, and digital forensics.
               </p>
-            </div>
+            </motion.div>
+            
+            {/* Quick Access Terminal */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={introInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 2 }}
+            >
+              <QuickAccess />
+            </motion.div>
           </div>
         </section>
 
         {/* Timeline Section */}
-        <section id="timeline" className="relative py-20 px-4">
+        <section ref={timelineRef} id="timeline" className="relative py-20 px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={timelineInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
-                MISSION TIMELINE
+                <GlitchText text="MISSION TIMELINE" />
               </h2>
               <p className="text-gray-400 font-mono">SYNCHRONIZE YOUR SCHEDULE</p>
-            </div>
+            </motion.div>
             
             <div className="relative">
               {/* Main Timeline Line - runs through all items */}
@@ -263,20 +346,30 @@ export default function Home() {
         </section>
 
         {/* Prizes Section */}
-        <section id="prizes" className="relative py-20 px-4">
+        <section ref={prizesRef} id="prizes" className="relative py-20 px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={prizesInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
-                VAULT REWARDS
+                <GlitchText text="VAULT REWARDS" />
               </h2>
               <p className="text-gray-400 font-mono">CLAIM YOUR BOUNTY</p>
-            </div>
+            </motion.div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              animate={prizesInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="grid md:grid-cols-3 gap-8"
+            >
               <PrizeCard place="FIRST PLACE" amount="LKR 60,000" icon="trophy" rank={1} />
               <PrizeCard place="SECOND PLACE" amount="LKR 40,000" icon="award" rank={2} />
               <PrizeCard place="THIRD PLACE" amount="LKR 20,000" icon="medal" rank={3} />
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -285,7 +378,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
-                ALLIANCE PARTNERS
+                <GlitchText text="ALLIANCE PARTNERS" />
               </h2>
               <p className="text-gray-400 font-mono">POWERED BY INDUSTRY LEADERS</p>
             </div>
@@ -308,7 +401,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
-                COMMAND CENTER
+                <GlitchText text="COMMAND CENTER" />
               </h2>
               <p className="text-gray-400 font-mono">MEET THE ARCHITECTS</p>
             </div>
@@ -337,7 +430,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 cyber-font text-red-500 neon-glow-readable inline-block">
-                INTEL BRIEFING
+                <GlitchText text="INTEL BRIEFING" />
               </h2>
               <p className="text-gray-400 font-mono">CLASSIFIED INFORMATION</p>
             </div>
@@ -405,7 +498,7 @@ export default function Home() {
             
             <div className="mt-8 text-center">
               <p className="text-gray-500 text-sm font-mono">
-                💡 <span className="text-red-400">Hint:</span> Type the four-letter magic word that means “I need support”
+                💡 <span className="text-red-400">Hint:</span> Try typing "help" on your keyboard...
               </p>
             </div>
           </div>
