@@ -23,7 +23,7 @@ export default function Home() {
 
   // Handle easter egg keyboard sequence
   useEffect(() => {
-    const handleKeyPress = (e) => {
+    const handleKeyPress = (e: KeyboardEvent) => {
       const newSequence = keySequence + e.key.toLowerCase();
       setKeySequence(newSequence);
       
@@ -236,16 +236,27 @@ export default function Home() {
               <p className="text-gray-400 font-mono">SYNCHRONIZE YOUR SCHEDULE</p>
             </div>
             
-            <div className="space-y-8">
-              {timelineData.map((item, index) => (
-                <TimelineItem
-                  key={index}
-                  title={item.title}
-                  date={item.date}
-                  description={item.description}
-                  isLast={index === timelineData.length - 1}
-                />
-              ))}
+            <div className="relative">
+              {/* Main Timeline Line - runs through all items */}
+              <div className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-red-500/20 via-red-500/60 to-red-500/20 hidden md:block timeline-pulse">
+                {/* Animated flow effect */}
+                <div className="absolute inset-0 w-full bg-gradient-to-b from-transparent via-red-400 to-transparent timeline-flow opacity-40"></div>
+                {/* Additional flowing dots */}
+                <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-red-400 rounded-full timeline-flow"></div>
+                <div className="absolute top-3/4 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-red-400 rounded-full timeline-flow" style={{ animationDelay: '1.5s' }}></div>
+              </div>
+              
+              <div className="space-y-8 relative">
+                {timelineData.map((item, index) => (
+                  <TimelineItem
+                    key={index}
+                    title={item.title}
+                    date={item.date}
+                    description={item.description}
+                    isLast={index === timelineData.length - 1}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
