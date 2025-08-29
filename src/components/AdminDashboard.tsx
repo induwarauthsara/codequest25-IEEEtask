@@ -91,14 +91,20 @@ const AdminDashboard = ({ onLogout }) => {
   const fetchSecurityLogs = async () => {
     setLogsLoading(true)
     try {
-      const { data, error } = await supabase
-        .from('security_logs')
-        .select('*')
-        .order('timestamp', { ascending: false })
-        .limit(100)
+      const sessionId = sessionStorage.getItem('adminSessionId')
+      const response = await fetch('/api/admin/security-logs', {
+        headers: {
+          'admin-session-id': sessionId || ''
+        }
+      })
 
-      if (error) throw error
-      setSecurityLogs(data || [])
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to fetch security logs')
+      }
+
+      setSecurityLogs(result.data || [])
     } catch (error) {
       console.error('Error fetching security logs:', error)
     } finally {
@@ -111,12 +117,23 @@ const AdminDashboard = ({ onLogout }) => {
     const sessionId = sessionStorage.getItem('adminSessionId')
     
     try {
-      const { error } = await supabase
-        .from('teams')
-        .update({ status: newStatus })
-        .eq('id', teamId)
+      const response = await fetch('/api/admin/teams', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          teamId,
+          status: newStatus,
+          adminSessionId: sessionId
+        })
+      })
 
-      if (error) throw error
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to update team status')
+      }
 
       // Log the team status change
       await logSecurityEvent({

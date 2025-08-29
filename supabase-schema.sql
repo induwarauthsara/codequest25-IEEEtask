@@ -95,8 +95,23 @@ CREATE POLICY "Anyone can view teams" ON teams
 CREATE POLICY "Anyone can create security logs" ON security_logs
     FOR INSERT WITH CHECK (true);
 
+-- Allow admin updates to team status (using service role key)
+CREATE POLICY "Service role can update teams" ON teams
+    FOR UPDATE USING (auth.role() = 'service_role');
+
+-- Temporary admin policy for development (REMOVE IN PRODUCTION)
+-- This allows updates when a specific condition is met
+CREATE POLICY "Admin can update team status" ON teams
+    FOR UPDATE USING (true)
+    WITH CHECK (status IN ('pending', 'approved', 'rejected'));
+
 -- Only allow viewing security logs with service role (admin access)
 CREATE POLICY "Service role can view security logs" ON security_logs
     FOR SELECT USING (auth.role() = 'service_role');
+
+-- Temporary admin policy for development (REMOVE IN PRODUCTION)
+-- This allows reading security logs for admin dashboard
+CREATE POLICY "Admin can view security logs" ON security_logs
+    FOR SELECT USING (true);
 
 -- Note: For admin access, you'll need to create admin-specific policies or use service role key
