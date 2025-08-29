@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 interface TeamCardProps {
@@ -12,13 +13,29 @@ interface TeamCardProps {
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, github, linkedin, email, phone }) => {
+  const [imageError, setImageError] = useState(false);
+  
   return (
     <div className="flip-card w-80 h-96">
       <div className="flip-card-inner relative w-full h-full">
         {/* Front Side */}
         <div className="flip-card-front absolute inset-0 bg-gray-900 border-2 border-red-500/50 rounded-xl p-6 flex flex-col items-center justify-center">
-          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-red-500 mb-4">
-            <img src={image} alt={name} className="w-full h-full object-cover" />
+          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-red-500 mb-4 relative bg-gray-800 flex items-center justify-center">
+            {!imageError ? (
+              <Image 
+                src={image} 
+                alt={name} 
+                fill
+                className="object-cover"
+                sizes="128px"
+                onError={() => setImageError(true)}
+                priority
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-red-500 text-2xl font-bold">
+                {name.charAt(0).toUpperCase()}
+              </div>
+            )}
           </div>
           <h3 className="text-2xl font-bold text-white mb-2 font-mono">{name}</h3>
           <p className="text-red-500 text-lg font-semibold">{role}</p>

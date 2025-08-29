@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Shield, Calendar, Trophy, Users, HelpCircle, Github, Linkedin, Mail, ExternalLink, MapPin } from 'lucide-react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { teamImages } from '../lib/images';
 
 // Components
 import MatrixRain from '../components/MatrixRain';
@@ -66,7 +67,7 @@ export default function Home() {
     {
       name: "Likitha Chathubhashini",
       role: "Event Co Chair",
-      image: "/assets/likitha.5571cd8e.jpg",
+      image: teamImages.likitha,
       github: "https://github.com",
       linkedin: "https://www.linkedin.com/in/likitha-chathubhashini-b852b0289/",
       email: "likithachathu@gmail.com",
@@ -75,7 +76,7 @@ export default function Home() {
     {
       name: "Noji Yudara",
       role: "Event Co Chair", 
-      image: "/assets/noji.8520b926.jpg",
+      image: teamImages.noji,
       github: "https://github.com",
       linkedin: "https://www.linkedin.com/in/nojiyudara/",
       email: "noji.yu123@gmail.com",
@@ -84,7 +85,7 @@ export default function Home() {
     {
       name: "Chamudi Upeka",
       role: "Event Co Chair",
-      image: "/assets/chamudi.42c865f3.jpg",
+      image: teamImages.chamudi,
       github: "https://github.com",
       linkedin: "https://linkedin.com",
       email: "chamudiupeka21@gmail.com",
@@ -93,7 +94,7 @@ export default function Home() {
     {
       name: "Dineth Palliyaguru",
       role: "Program Team Lead",
-      image: "/assets/dineth.4687f7f1.jpg",
+      image: teamImages.dineth,
       github: "https://github.com",
         linkedin: "https://www.linkedin.com/in/dineth-palliyaguru/",
       email: "dineththeekshana@gmail.com",
@@ -102,7 +103,7 @@ export default function Home() {
     {
       name: "Induwara Uthsara",
       role: "Web Dev",
-      image: "/assets/induwara.jpg",
+      image: teamImages.induwara,
       github: "https://github.com/induwarauthsara",
       linkedin: "https://www.linkedin.com/in/induwarauthsara/",
       email: "induwarauthsara@gmail.com",
