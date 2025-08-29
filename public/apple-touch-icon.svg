@@ -1,0 +1,28 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with rounded corners for iOS -->
+  <rect width="180" height="180" rx="40" fill="#000000"/>
+  
+  <!-- Shield outline -->
+  <path d="M90 20L140 40V80C140 120 115 150 90 180C65 150 40 120 40 80V40L90 20Z" 
+        fill="none" 
+        stroke="#00ff00" 
+        stroke-width="8"/>
+  
+  <!-- Inner lock -->
+  <rect x="70" y="80" width="40" height="40" 
+        fill="none" 
+        stroke="#00ff00" 
+        stroke-width="6"/>
+  
+  <!-- Lock shackle -->
+  <path d="M75 80V65C75 55 82 45 90 45C98 45 105 55 105 65V80" 
+        fill="none" 
+        stroke="#00ff00" 
+        stroke-width="6"/>
+  
+  <!-- Lock dot -->
+  <circle cx="90" cy="100" r="8" fill="#00ff00"/>
+  
+  <!-- CodeQuest text -->
+  <text x="90" y="165" text-anchor="middle" font-family="monospace" font-size="18" fill="#00ff00" font-weight="bold">CTF</text>
+</svg>
