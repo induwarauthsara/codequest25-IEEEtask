@@ -11,7 +11,7 @@
 **The Official Web Platform for CodeQuest CTF Hackathon**  
 *Organized by IEEE Student Branch of UCSC*
 
-[🔗 Live Demo](https://codequest25-ieee-task.vercel.app)
+[🔗 Visit Live Demo Website](https://codequest25.induwara.dev)
 
 </div>
 
