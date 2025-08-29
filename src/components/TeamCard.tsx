@@ -37,7 +37,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, github, linkedin
               </div>
             )}
           </div>
-          <h3 className="text-2xl font-bold text-white mb-2 font-mono">{name}</h3>
+          <h3 className="text-2xl font-bold text-white mb-2 font-mono text-center">{name}</h3>
           <p className="text-red-500 text-lg font-semibold">{role}</p>
           
           {/* Cyber frame effect */}
@@ -49,7 +49,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, github, linkedin
         
         {/* Back Side */}
         <div className="flip-card-back absolute inset-0 bg-gray-800 border-2 border-red-500 rounded-xl p-6 flex flex-col items-center justify-center">
-          <h3 className="text-2xl font-bold text-red-500 mb-6 font-mono">{name}</h3>
+          <h3 className="text-2xl font-bold text-red-500 mb-6 font-mono text-center">{name}</h3>
           
           <div className="space-y-4">
             {github && (
