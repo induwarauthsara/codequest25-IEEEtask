@@ -10,7 +10,6 @@ interface TypingTextProps {
 const TypingText: React.FC<TypingTextProps> = ({ text, speed = 50, className = '', onComplete }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
     if (currentIndex < text.length) {
@@ -25,20 +24,14 @@ const TypingText: React.FC<TypingTextProps> = ({ text, speed = 50, className = '
     }
   }, [currentIndex, text, speed, onComplete]);
 
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
-    }, 500);
-
-    return () => clearInterval(cursorInterval);
-  }, []);
-
   return (
-    <span className={className}>
+    <span className={`${className} relative`}>
       {displayText}
-      <span className={`inline-block w-0.5 ml-1 bg-red-500 ${showCursor ? 'opacity-100' : 'opacity-0'}`}>
-        |
-      </span>
+      {currentIndex < text.length && (
+        <span className="inline-block w-0.5 h-6 ml-1 bg-red-500 animate-pulse">
+          |
+        </span>
+      )}
     </span>
   );
 };
