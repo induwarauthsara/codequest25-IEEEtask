@@ -1,15 +1,4 @@
 {
-  "functions": {
-    "src/pages/api/*.js": {
-      "runtime": "@vercel/node"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/assets/:path*",
-      "destination": "/assets/:path*"
-    }
-  ],
   "headers": [
     {
       "source": "/assets/(.*)",
