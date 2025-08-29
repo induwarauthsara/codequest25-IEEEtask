@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import '../index.css'
 import CustomCursor from '../components/CustomCursor'
+import ErrorBoundary from '../components/ErrorBoundary'
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <ErrorBoundary>
       <Head>
         <title>CodeQuest - Vault Edition | IEEE UCSC CTF Hackathon</title>
         <meta name="description" content="The ultimate cybersecurity challenge awaits. Join IEEE UCSC's premier CTF hackathon." />
@@ -16,6 +17,6 @@ export default function App({ Component, pageProps }) {
       </Head>
       <CustomCursor />
       <Component {...pageProps} />
-    </>
+    </ErrorBoundary>
   )
 }
