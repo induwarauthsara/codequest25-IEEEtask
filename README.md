@@ -73,7 +73,7 @@ npm run dev
 3. **Easter Egg**: Type "help" anywhere for hints
 
 ### For Admins
-1. Navigate to `/registration?admin=true`
+1. Navigate to `/admin`
 2. Login with: `admin` / `codequest2025admin`  (you can change this in the `.env.local` file)
 3. Manage teams and view security logs
 
