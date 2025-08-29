@@ -47,11 +47,11 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2 group">
               <div className="relative">
-                <img 
+                {/* <img 
                   src="/assets/logo.png" 
                   alt="CodeQuest Logo" 
                   className="h-8 w-8 md:h-10 md:w-10 transition-all duration-300 group-hover:scale-110"
-                />
+                /> */}
                 <div className="absolute inset-0 bg-red-500/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <span className="text-xl md:text-2xl font-bold cyber-font neon-glow">
